@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Ghost": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "externalUrlConfiguration": true,
+      "applicationUrl": "https://free-pshycho-test.shop/",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
