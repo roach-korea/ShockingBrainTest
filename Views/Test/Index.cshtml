@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free IQ Test">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Psychologist, Mental Test">
+    <meta name="author" content="Dr. Alexander Fenwick">
+    <meta name="image" content="https://free-pshycho-test.shop/Media/mask.jpg">
+    <meta property="og:title" content="Free IQ Test">
+    <meta property="og:description" content="Test your IQ level by tests examined by experts.">
+    <meta property="og:image" content="https://free-pshycho-test.shop/Media/mask.jpg">
+    <meta property="og:url" content="https://free-pshycho-test.shop">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css" type="text/css" />
+    <link rel="icon" href="/ico.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/ico.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>능지 테스트 시작</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="title">
+            <h1>
+                1. 기초 수리/언어 지각 능력 테스트
+            </h1>
+        </div>
+        <progress class="progress" max="100" value="0">70%</progress>
+        <div class="question">
+            <script>
+                @{
+                    var code = ViewData["Code"];
+                }
+
+                    $(document).ready(function () {
+                        $.ajax({
+                            url: `/Test/Question/?id=1&code=${encodeURIComponent(@code)}`,
+                            method: "GET",
+                            success: function (response) {
+                                $(".question").empty();
+                                $(".question").html(response);
+                            },
+                            error: function () {
+                                alert("Failed to update the content.");
+                            }
+                        });
+                    });
+            </script>
+        </div>
+    </div>
+    <video id="video" class="video" preload="auto" src="Media/video.mp4"></video>
+</body>
+</html>

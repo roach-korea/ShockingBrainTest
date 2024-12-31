@@ -1,0 +1,68 @@
+﻿<p>
+    <b>
+        Question. 3
+    </b>
+</p>
+<p>
+    <br />
+</p>
+<p>
+    "모든 강아지는 동물이다. 몇몇 동물은 고양이다."
+</p>
+<p>
+    이 두 문장으로 알 수 있는 사실은 무엇인가요?
+</p>
+<p><br /></p>
+
+<input type="radio" id="answer1" name="answer" value="answer1" checked required />
+<label for="answer1">
+    a. 모든 강아지는 고양이이다.
+</label>
+<br />
+
+<input type="radio" id="answer2" name="answer" value="answer2" required />
+<label for="answer2">
+    b. 강아지와 고양이는 같은 동물이다.
+</label>
+<br />
+
+<input type="radio" id="answer3" name="answer" value="answer3" required />
+<label for="answer3">
+    c. 강아지가 고양이일 필요는 없다.
+</label>
+<br />
+
+<input type="radio" id="answer4" name="answer" value="answer4" required />
+<label for="answer4">
+    d. 고양이는 강아지이다.
+</label>
+<br />
+<br />
+
+<script src="/MediaHelper.js" defer></script>
+<button type="button" id="start" class="next">다음</button>
+
+<script>
+    @{
+        var code = ViewData["Code"];
+    }
+
+        $(document).ready(function () {
+            $(".next").on("click", function (event) {
+                event.preventDefault();
+
+                $(".progress").attr("value", 30);
+                $.ajax({
+                    url: `/Test/Question/?id=4&code=${encodeURIComponent(@code)}`,
+                    method: "GET",
+                    success: function (response) {
+                        $(".question").empty();
+                        $(".question").html(response);
+                    },
+                    error: function () {
+                        alert("Failed to update the content.");
+                    }
+                });
+            });
+        });
+</script>

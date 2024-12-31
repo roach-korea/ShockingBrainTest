@@ -1,0 +1,46 @@
+﻿<p>
+    <b>
+        Question. 2
+    </b>
+</p>
+<p>
+    <br />
+</p>
+<p>
+    다음 식을 풀어보세요:
+</p>
+<p>
+    6 × 2 + 3 × (2 + 1) = ?
+</p>
+<p><br /></p>
+
+<input type="text" id="answer1" name="answer" required />
+<br />
+<br />
+
+<button type="button" class="next">다음</button>
+
+<script>
+    @{
+        var code = ViewData["Code"];
+    }
+
+        $(document).ready(function () {
+            $(".next").on("click", function (event) {
+                event.preventDefault();
+
+                $(".progress").attr("value", 20);
+                $.ajax({
+                    url: `/Test/Question/?id=3&code=${encodeURIComponent(@code)}`,
+                    method: "GET",
+                    success: function (response) {
+                        $(".question").empty();
+                        $(".question").html(response);
+                    },
+                    error: function () {
+                        alert("Failed to update the content.");
+                    }
+                });
+            });
+        });
+</script>

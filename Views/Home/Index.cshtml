@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free IQ Test">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Psychologist, Mental Test">
+    <meta name="author" content="Dr. Alexander Fenwick">
+    <meta name="image" content="https://free-pshycho-test.shop/Media/mask.jpg">
+    <meta property="og:title" content="Free IQ Test">
+    <meta property="og:description" content="Test your IQ level by tests examined by experts.">
+    <meta property="og:image" content="https://free-pshycho-test.shop/Media/mask.jpg">
+    <meta property="og:url" content="https://free-pshycho-test.shop">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css" type="text/css" />
+    <link rel="icon" href="/ico.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/ico.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>능지 테스트</title>
+</head>
+
+<body style="background: #303030;">
+    <div id="header">
+        <span class="logo">　 　<b>Simple Test</b></span>
+    </div>
+    <div id="home">
+        <div id="container">
+            <div class="title">
+                <h1>당신의 능지를 테스트해보세요.</h1>
+            </div>
+            <p>“Dr. Alexander Fenwick” (Ph.D. in Behavioral Psychology, Harvard University)</p>
+            <p><br /></p>
+            <p>당신은 대한민국 사람으로써의 기초적인 지능과 상식을 가지고 있나요?</p>
+            <p>간단한 15가지의 문제로 당신의 능지를 테스트해보세요!</p>
+            <p><br /></p>
+            <p><br /></p>
+
+
+            <label for="code">인증 코드:   </label>
+            <input type="number" id="code" class="code" name="code" placeholder="0000" maxlength="4" />
+            <p><br /></p>
+            <button type="button" class="start" onclick="redirectToUrl()">문제 시작</button>
+
+            <script>
+                function redirectToUrl() {
+                    var code = document.getElementById("code").value;
+                    var url = `/Test?code=${code}`;
+
+                    window.location.href = url;
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

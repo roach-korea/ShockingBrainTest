@@ -1,0 +1,67 @@
+﻿<p>
+    <b>
+        Question. 4
+    </b>
+</p>
+<p>
+    <br />
+</p>
+<p>
+    "모든 회원은 매일 아침 8시에 출석을 확인해야 한다. 만약 출석을 하지 않으면 경고를 받는다. 예외적으로, 상급자는 출석을 확인하지 않아도 된다."
+</p>
+<p>
+    이 경우, 상급자가 출석을 확인하지 않는다면 그들에게 경고가 내려지지 않는 이유는 무엇인가요?
+</p>
+<p><br /></p>
+
+<input type="radio" id="answer1" name="answer" value="answer1" checked required />
+<label for="answer1">
+    a. 상급자는 출석 확인이 의무가 아니기 때문이다.
+</label>
+<br />
+
+<input type="radio" id="answer2" name="answer" value="answer2" required />
+<label for="answer2">
+    b. 상급자는 출석 확인을 해야만 한다.
+</label>
+<br />
+
+<input type="radio" id="answer3" name="answer" value="answer3" required />
+<label for="answer3">
+    c. 경고는 상급자에게는 적용되지 않는다.
+</label>
+<br />
+
+<input type="radio" id="answer4" name="answer" value="answer4" required />
+<label for="answer4">
+    d. 상급자는 출석을 확인하는 것에 대해 면제를 받았다.
+</label>
+<br />
+<br />
+
+<button type="button" id="start" class="next">다음</button>
+
+<script>
+    @{
+        var code = ViewData["Code"];
+    }
+
+        $(document).ready(function () {
+            $(".next").on("click", function (event) {
+                event.preventDefault();
+
+                $(".progress").attr("value", 40);
+                $.ajax({
+                    url: `/Test/Question/?id=5&code=${encodeURIComponent(@code)}`,
+                    method: "GET",
+                    success: function (response) {
+                        $(".question").empty();
+                        $(".question").html(response);
+                    },
+                    error: function () {
+                        alert("Failed to update the content.");
+                    }
+                });
+            });
+        });
+</script>

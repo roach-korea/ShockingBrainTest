@@ -1,0 +1,46 @@
+﻿<p>
+    <b>
+        Question. 1
+    </b>
+</p>
+<p>
+    <br />
+</p>
+<p>
+    아래에 나열된 숫자에서 다음에 올 숫자는 무엇일까요?
+</p>
+<p>
+    2, 4, 8, 16, ___?
+</p>
+<p><br /></p>
+
+<input type="text" id="answer1" name="answer" required />
+<br />
+<br />
+
+<button type="button" class="next">다음</button>
+
+<script>
+    @{
+        var code = ViewData["Code"];
+    }
+
+        $(document).ready(function () {
+            $(".next").on("click", function (event) {
+                event.preventDefault();
+
+                $(".progress").attr("value", 10);
+                $.ajax({
+                    url: `/Test/Question/?id=2&code=${encodeURIComponent(@code)}`,
+                    method: "GET",
+                    success: function (response) {
+                        $(".question").empty();
+                        $(".question").html(response);
+                    },
+                    error: function () {
+                        alert("Failed to update the content.");
+                    }
+                });
+            });
+        });
+</script>
