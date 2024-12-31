@@ -1,0 +1,133 @@
+﻿@charset "utf-8";
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css');
+
+html, body, div, a, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, figure {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: #eee;
+    color: #222;
+}
+
+body, input, textarea, button {
+    font-family: 'Pretendard', 'Source Sans Pro', Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, '돋움', Dotum, Verdana, Arial, sans-serif;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-stretch: 100%;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    box-sizing: border-box;
+    word-break: keep-all;
+    unicode-bidi: isolate;
+    color: #222;
+}
+
+a {
+    color: #222;
+}
+
+#header {
+    width: 100%;
+    background: #98ad9f;
+    color: #444;
+    font-size: 24px;
+    padding: 20px 35px;
+    text-align: left;
+}
+
+    #header .logo {
+        background: url('/Media/logo.png') no-repeat;
+        background-size: contain;
+        width: 50px;
+        height: 50px;
+    }
+
+#home {
+    height: 800px;
+    background: linear-gradient(rgba(48,48,48,0) 50%, rgba(48,48,48,1) 100%), url('/Media/cover.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+    #home .mask {
+        background: url('/Media/mask.jpg') no-repeat;
+        background-size: cover;
+        width: 500px;
+        height: 350px;
+        margin: 0 auto;
+    }
+
+    #home .title {
+        text-align: left !important;
+        font-size: 32px;
+    }
+
+    #home #container {
+        font-size: 18px;
+    }
+
+#container {
+    margin: 0 auto;
+    max-width: 1080px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+    #container .title {
+        text-align: center;
+    }
+
+        #container .title h1 {
+            margin: 15px 0;
+        }
+
+    #container .progress {
+        width: 100%;
+        accent-color: red;
+        background-color: white;
+    }
+
+    #container .question {
+        margin: 30px 0;
+        font-size: 18px;
+    }
+
+    #container .next {
+        background: #ccc;
+        border-radius: 10px;
+        padding: 10px 50px;
+        cursor: pointer;
+        border: 1px solid #bbb;
+    }
+
+    #container .start {
+        background: #6c9d7b;
+        border-radius: 10px;
+        padding: 20px 100px;
+        cursor: pointer;
+        border: none;
+        color: white;
+    }
+
+        #container .start:hover {
+            background: #7EB890;
+        }
+
+#video {
+    display: none;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+    #video::-webkit-media-controls-enclosure {
+        display: none !important;
+    }
